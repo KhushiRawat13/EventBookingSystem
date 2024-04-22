@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Vibur', cursive;
+
+        font-family: 'Abel', sans-serif;
+        opacity: .95;
+        }
+        header {
+         margin: 2% auto 10% auto;
+        text-align: center;
+        }
+        header h2 {
+        font-size: 250%;
+        font-family: 'Playfair Display', serif;
+        color: #3e403f;
+        }
+        header p {letter-spacing: 0.05em;}
+
+
+        form {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .submits {
+    width: 48%;
+    display: inline-block;
+    float: left;
+    margin-left: 2%;
+    align-items: center;
+}
+        .error-message {
+            color: #ff0000;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return checkForm();" id="myform">
+        <header class="head-form">
+            <h2>Log In</h2>
+            
+            <p>login here using your username and password</p>
+         </header>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <br>
+        <input type="submit" value="Submit">
+        <p class="error-message" id="error-message"></p>
+    </form>
+    <script>
+        function checkForm() {
+            var username = document.forms["myform"]["username"].value;
+            var password = document.forms["myform"]["password"].value;
+            var errorMessage = document.getElementById("error-message");
+
+            if (username === "khushurawat13@gmail.com" && password === "123") {
+                window.location.href = "index.html";
+                return false; // Prevent form submission
+            } else {
+                errorMessage.textContent = "Invalid username or password";
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
